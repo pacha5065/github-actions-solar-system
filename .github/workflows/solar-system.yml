@@ -31,11 +31,12 @@ jobs:
           run: npm test
           
         - name: Archive Test Result
-          if: steps.unit-test.outcome == failure()
+          if: failure()
           uses: actions/upload-artifact@v4
           with:
             name: Mocha-Test-Result
             path: test-results.xml
+
 
 
 
